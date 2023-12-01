@@ -1,9 +1,5 @@
-use std::fs::read_to_string;
-
-pub fn solve_day_1() {
-    let a_input = read_to_string("./inputs/day_1_a.txt").unwrap();
-
-    let sum: usize = a_input
+pub fn solve_1a(input: &str) -> usize {
+    input
         .lines()
         .map(|line| line
             .chars()
@@ -13,20 +9,14 @@ pub fn solve_day_1() {
         .map(|num_chars| format!("{}{}", num_chars.first().unwrap(), num_chars.last().unwrap()))
         .map(|s| s.parse::<usize>().unwrap())
         .sum()
-        ;
+}
 
-    println!("Solution A: {sum}");
-
-    let b_input = read_to_string("./inputs/day_1_a.txt").unwrap();
-
-    let sum: usize = b_input
+pub fn solve_1b(input: &str) -> usize {
+    input
         .lines()
         .map(|line| get_line_numbers(line))
         .map(|numbers| format!("{}{}", numbers.first().unwrap(), numbers.last().unwrap()).parse::<usize>().unwrap())
         .sum()
-        ;
-
-    println!("Solution B: {sum}");
 }
 
 fn get_line_numbers(line: &str) -> Vec<u32> {
