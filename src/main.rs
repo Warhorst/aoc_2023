@@ -1,3 +1,7 @@
+use crate::day_1::solve_day_1;
+
+mod day_1;
+
 fn main() {
-    println!("Hello, world!");
+    solve_day_1();
 }
