@@ -1,11 +1,11 @@
 use std::fmt::Debug;
-use crate::day_1::{solve_1a, solve_1b};
 
+use crate::day_1::{solve_1a, solve_1b};
 use crate::day_2::{solve_2a, solve_2b};
 use crate::input::load_input;
 
-mod day_1;
 mod input;
+mod day_1;
 mod day_2;
 
 fn main() {
@@ -26,7 +26,7 @@ fn solve<A: Debug + PartialEq, B: Debug + PartialEq, AS: Fn(&str) -> A, BS: Fn(&
     a_solver: AS,
     a_example_solution: A,
     b_solver: BS,
-    b_example_solution: B
+    b_example_solution: B,
 ) {
     println!("Solving day {day}");
 
