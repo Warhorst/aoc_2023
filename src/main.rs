@@ -18,7 +18,7 @@ fn solve_day(day: usize) {
     let solve_day_funcs = [
         || solve(1, solve_1a, 142, solve_1b, 281),
         || solve(2, solve_2a, 8, solve_2b, 2286),
-        || solve(3, solve_3a, 0, solve_3b, 0),
+        || solve(3, solve_3a, 4361, solve_3b, 467835),
     ];
 
     solve_day_funcs[day - 1]()
