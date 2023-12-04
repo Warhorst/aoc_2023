@@ -7,9 +7,9 @@ pub struct Input {
 }
 
 pub fn load_input(day: u8) -> Input {
-    let puzzle_input = read_to_string(format!("./inputs/{day}.txt")).unwrap_or(String::default());
-    let example_a = read_to_string(format!("./inputs/{day}a.txt")).unwrap_or(String::default());
-    let example_b = read_to_string(format!("./inputs/{day}b.txt")).unwrap_or(String::default());
+    let puzzle_input = read_to_string(format!("./input/{day}.txt")).unwrap_or(String::default());
+    let example_a = read_to_string(format!("./input/{day}a.txt")).unwrap_or(String::default());
+    let example_b = read_to_string(format!("./input/{day}b.txt")).unwrap_or(String::default());
 
     Input {
         puzzle_input,
