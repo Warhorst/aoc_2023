@@ -17,7 +17,7 @@ mod day_5;
 mod day_6;
 
 fn main() {
-    solve_day(5)
+    solve_day(6)
 }
 
 fn solve_day(day: usize) {
@@ -27,7 +27,7 @@ fn solve_day(day: usize) {
         || solve(3, solve_3a, 4361, solve_3b, 467835),
         || solve(4, solve_4a, 13, solve_4b, 30),
         || solve(5, solve_5a, 35, solve_5b, 46),
-        || solve(6, solve_6a, 0, solve_6b, 0),
+        || solve(6, solve_6a, 288, solve_6b, 71503),
     ];
 
     solve_day_funcs[day - 1]()
