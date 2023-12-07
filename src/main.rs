@@ -30,7 +30,7 @@ fn solve_day(day: usize) {
         || solve(4, solve_4a, 13, solve_4b, 30),
         || solve(5, solve_5a, 35, solve_5b, 46),
         || solve(6, solve_6a, 288, solve_6b, 71503),
-        || solve(7, solve_7a, 0, solve_7b, 0),
+        || solve(7, solve_7a, 6440, solve_7b, 5905),
     ];
 
     solve_day_funcs[day - 1]()
