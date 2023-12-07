@@ -7,6 +7,7 @@ use crate::day_4::{solve_4a, solve_4b};
 use crate::day_5::{solve_5a, solve_5b};
 use crate::day_6::{solve_6a, solve_6b};
 use crate::day_7::{solve_7a, solve_7b};
+use crate::day_8::{solve_8a, solve_8b};
 use crate::input::load_input;
 
 mod input;
@@ -17,9 +18,10 @@ mod day_4;
 mod day_5;
 mod day_6;
 mod day_7;
+mod day_8;
 
 fn main() {
-    solve_day(7)
+    solve_day(8)
 }
 
 fn solve_day(day: usize) {
@@ -31,6 +33,7 @@ fn solve_day(day: usize) {
         || solve(5, solve_5a, 35, solve_5b, 46),
         || solve(6, solve_6a, 288, solve_6b, 71503),
         || solve(7, solve_7a, 6440, solve_7b, 5905),
+        || solve(8, solve_8a, 0, solve_8b, 0),
     ];
 
     solve_day_funcs[day - 1]()
