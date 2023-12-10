@@ -1,8 +1,7 @@
 use std::collections::HashMap;
+use geo::{Contains, Coord, LineString, point, Polygon};
 use pad::{Direction, p, Position};
 use pad::Direction::*;
-use polygonical::point::Point;
-use polygonical::polygon::Polygon;
 use crate::day_10::Tile::{Ground, Horizontal, NorthEast, NorthWest, SouthEast, SouthWest, Start, Vertical};
 
 pub fn solve_10a(input: &str) -> usize {
@@ -86,19 +85,23 @@ pub fn solve_10b(input: &str) -> usize {
         loop_positions.push(current_pos);
     }
 
-    let polygon = Polygon::new(
+    let polygon = Polygon::new(LineString::new(
         loop_positions
             .iter()
-            .inspect(|pos| println!("{:?}", pos))
-            .map(|pos| Point::new(pos.x as f32, pos.y as f32))
+            .map(|pos| {
+                let mut c = Coord::zero();
+                c.x = pos.x as f32;
+                c.y = pos.y as f32;
+                c
+            })
             .collect()
-    );
+    ),
+    vec![]);
 
-    // Always returns 0...
     tile_map
         .keys()
         .filter(|pos| !loop_positions.contains(pos))
-        .filter(|pos| polygon.contains(Point::new(pos.x as f32, pos.y as f32)))
+        .filter(|pos| polygon.contains(&point!(x: pos.x as f32, y: pos.y as f32)))
         .count()
 }
 
