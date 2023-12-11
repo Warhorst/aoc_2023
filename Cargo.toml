@@ -10,3 +10,5 @@ pad = {git = "https://github.com/Warhorst/pad.git"}
 rayon = "1.8.0"
 num = "0.4.1"
 geo = "0.27.0"
+pathfinding = "4.4.0"
+itertools = "0.12.0"
