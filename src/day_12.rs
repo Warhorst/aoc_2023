@@ -15,7 +15,17 @@ pub fn solve_12a(input: &str) -> usize {
         .sum()
 }
 
-pub fn solve_12b(input: &str) -> usize {
+// Idea: Windows iter
+// start: all windows are as far left as possible
+// -> Return this start as first result
+// the iterator is done if all windows are as far right as possible
+// 1. Move the current to the right until valid
+// 2. If on valid position, go to the next window
+// 3. if the last window reached a valid position, store the config
+// 4. continue with the current position until a non valid position was reached
+// 5. backtrack to the point before moving the current position, move the previous one
+// 6. Repeat until done
+pub fn solve_12b(_input: &str) -> usize {
     0
 }
 
